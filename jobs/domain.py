@@ -24,10 +24,9 @@ class AllergySymptoms(Entry):
         return "allergy"
 
     @staticmethod
-    @staticmethod
     def validate(status) -> bool:
-        if(status > 0):
-            if(status < 10):
+        if status > 0:
+            if status < 10:
                 return True
         return False
 
@@ -46,8 +45,8 @@ class HealthStatus(Entry):
 
     @staticmethod
     def validate(status) -> bool:
-        if(status > 0):
-            if(status < 10):
+        if status > 0:
+            if status < 10:
                 return True
         return False
 
@@ -59,13 +58,14 @@ class HealthStatus(Entry):
     def error_message():
         return "Failed! Invalid health status"
 
+
 class FastingHours(Entry):
     def get_type(self) -> str:
         return "fasting"
 
     @staticmethod
     def validate(status) -> bool:
-        if(status > 0):
+        if status > 0:
             return True
         else:
             return False

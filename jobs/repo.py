@@ -28,11 +28,17 @@ class GoogleSheets:
         print(data_list)
         for d in data_list:
             if d["entry_type"] == "allergy":
-                return_list += [AllergySymptoms(date=isoparse(d["date"]), level=d["content"])]
+                return_list += [
+                    AllergySymptoms(date=isoparse(d["date"]), level=d["content"])
+                ]
             if d["entry_type"] == "health":
-                return_list += [HealthStatus(date=isoparse(d["date"]), level=d["content"])]
+                return_list += [
+                    HealthStatus(date=isoparse(d["date"]), level=d["content"])
+                ]
             if d["entry_type"] == "fasting":
-                return_list += [FastingHours(date=isoparse(d["date"]), level=d["content"])]
+                return_list += [
+                    FastingHours(date=isoparse(d["date"]), level=d["content"])
+                ]
         return return_list
 
 

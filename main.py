@@ -48,6 +48,7 @@ def get_token():
 async def help(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await context.bot.send_message(chat_id=update.effective_chat.id, text=help_text)
 
+
 async def status(update: Update, context: ContextTypes.DEFAULT_TYPE, entry_type):
     try:
         logger.info(update.message.text)
@@ -58,7 +59,7 @@ async def status(update: Update, context: ContextTypes.DEFAULT_TYPE, entry_type)
         conn.set(entry_type(date=date.today(), level=status))
         await context.bot.send_message(
             chat_id=update.effective_chat.id,
-            text=entry_type.success_message(len(conn.get_all()))
+            text=entry_type.success_message(len(conn.get_all())),
         )
     except:
         await context.bot.send_message(
@@ -70,11 +71,14 @@ async def status(update: Update, context: ContextTypes.DEFAULT_TYPE, entry_type)
 def health(update: Update, context: ContextTypes.DEFAULT_TYPE):
     return status(update, context, HealthStatus)
 
+
 def allergy(update: Update, context: ContextTypes.DEFAULT_TYPE):
     return status(update, context, AllergySymptoms)
 
+
 def fasting(update: Update, context: ContextTypes.DEFAULT_TYPE):
     return status(update, context, FastingHours)
+
 
 async def echo(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await context.bot.send_message(
