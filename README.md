@@ -5,4 +5,4 @@ Uses Telegram Bot to get some status updates such as my allergy level, overall h
 Saves that status in a Google Sheets.
 
 
-yes i know this is useless since I can just install the Sheets app in my Phone but I was bored.
+yes i know this is useless since I can just install the Sheets app in my Phone but I was bored and wanted to play with the Telegram Bot.
